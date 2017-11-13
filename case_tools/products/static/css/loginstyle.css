@@ -1,0 +1,113 @@
+.navbar-brand{
+	font-family: 'Cinzel', serif;
+	font-size: 36pt;
+	color:white; !important
+    background-color:black;
+}
+
+.navbar-default, .navbar-brand {
+    color:white;
+    background-color:black ;
+}
+
+.navbar-default .navbar-brand {
+    color:white; !important
+    background-color:black ;
+}
+
+h3 {
+	text-align: center;
+	margin-top: 0px;
+	clear: both;
+	position: relative;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 5px;
+}
+
+.login {
+width:400px;
+padding:30px 30px;
+font-family: 'Noto Serif', serif;
+margin-top: 130px;
+border-radius: 5%;
+float:right;
+text-align: center;
+color: white;
+}
+
+.signup {
+width:400px;
+padding:30px 30px;
+font-family: 'Noto Serif', serif;
+margin-top: 90px;
+border-radius: 5%;
+float:right;
+text-align: center;
+color: white;
+}
+
+.form-control
+{
+	margin: 10px 0px;
+}
+
+#sub{
+	float: right;
+	clear: both;
+	margin-bottom: 20px;
+}
+
+#stuff{
+	padding-top: 60px;
+}
+
+.form-check{
+	float: right;
+}
+
+label{
+	font-weight: normal;
+	padding: 10px;
+}
+
+#forgot{
+	float:left;	
+	padding: 10px;
+}
+
+#forgotrem{
+	display: inline;}
+
+#cna{
+	margin: 0 auto;
+	width:50%;
+}
+
+#cna{
+	margin-top: 10px;
+	text-decoration: none;
+}
+
+#signin{
+border-bottom: 1px solid white;
+}
+
+#nta{
+border-top: 1px solid white;
+padding: 10px;
+margin-bottom: 3px;
+}
+
+a{
+	color: white;	
+}
+
+a:hover{
+	color:white;
+	text-decoration: none;
+}
+
+span {
+	
+}

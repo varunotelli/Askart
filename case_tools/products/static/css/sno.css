@@ -1,0 +1,25 @@
+#sno1 {
+position:absolute;
+left:350px;
+top:260px;
+width:40px;
+height:40px;
+background-color:#efefef;
+font-size:14pt;
+padding-left:12px;
+padding-top:6px;
+border:2px solid #aaaaaa;
+}
+
+#sno2 {
+position:absolute;
+left:350px;
+top:320px;
+width:40px;
+height:40px;
+background-color:#efefef;
+font-size:14pt;
+padding-left:12px;
+padding-top:6px;
+border:2px solid #aaaaaa;
+}

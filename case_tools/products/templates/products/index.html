@@ -1,0 +1,61 @@
+{% extends 'products/base.html'%}
+{%block body%}
+{%load static%}
+
+<div class="container-fluid">
+<div id="jio">
+	{%for products in prod_list%}
+	{%if "selection2" in products%}
+	{%static "" as vasi %}
+	<a href="http://127.0.0.1:8000/products/item/{{products.name}}">
+	<div class="col-lg-4 box">
+	<img src="{{vasi}}images/{{products.image}}" class="imgbox">
+	<div style="color:black;" class="name"><b>{{products.name}}</b></div>
+	</div>
+	</a>
+	
+	{%endif%}
+	{% endfor %}
+</div>	
+</div>
+{% if prod_list.has_other_pages %}
+  <ul class="pagination box">
+	{% if prod_list.has_previous %}
+	  <li><a href="?page={{ prod_list.previous_page_number }}">&laquo;</a></li>
+	{% else %}
+	  <li class="disabled"><span>&laquo;</span></li>
+	{% endif %}
+	{% for i in prod_list.paginator.page_range %}
+	  {% if prod_list.number == i %}
+		<li class="active"><span style="z-index:0;">{{ i }} <span class="sr-only">(current)</span></span></li>
+	  {% else %}
+		<li><a href="?page={{ i }}">{{ i }}</a></li>
+	  {% endif %}
+	{% endfor %}
+	{% if prod_list.has_next %}
+	  <li><a href="?page={{ prod_list.next_page_number }}">&raquo;</a></li>
+	{% else %}
+	  <li class="disabled"><span>&raquo;</span></li>
+	{% endif %}
+  </ul>
+{% endif %}
+{% if prod_list.has_other_pages %}
+{% if prod_list.has_previous %}<a href="?page={{ prod_list.previous_page_number }}">
+<button class="arrow left">
+  <svg width="40px" height="70px" viewBox="0 0 50 80" xml:space="preserve">
+    <polyline fill="none" stroke="#337ab7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="
+	45.63,75.8 0.375,38.087 45.63,0.375 "/>
+  </svg>  
+</button></a>
+{% endif %}
+{% if prod_list.has_next %}
+<a href="?page={{ prod_list.next_page_number }}">
+<button class="arrow right">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40px" height="70px" viewBox="0 0 50 80" xml:space="preserve">
+    <polyline class="pol" fill="none" stroke="#337ab7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="
+	0.375,0.375 45.63,38.087 0.375,75.8 "/>
+  </svg>
+</button></a>
+{% endif %}
+{% endif %}
+{%endblock%}

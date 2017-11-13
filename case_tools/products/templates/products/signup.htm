@@ -1,0 +1,52 @@
+{%extends 'products/base.html'%}
+{%block body%}
+	<!--login-->
+<style>
+	body{
+
+
+	 background: url('https://s-media-cache-ak0.pinimg.com/originals/5d/8e/72/5d8e72d61c01f821f223dc3947bab576.jpg') no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y:auto;
+}
+
+</style>
+	<div id="stuff" class="container container-fluid">
+		<div class="signup col-md-6">
+			<form action="" method="post" class="form-group">
+				{%csrf_token%}
+				<h3 id="signin"> SIGN UP </h3>
+				<div>
+				<input type="text" name="first_name" class="form-control" placeholder="First Name" style="float:left; width:48.5%; ">
+				<input type="text" name="last_name" class="form-control" placeholder="Last Name" style="float:right; width: 48.5%; ">
+				</div>
+				<input type="email" name="username" class="form-control" placeholder="Email">
+				<input type="password" name="password" class="form-control" placeholder="Password">
+				<input type="password" class="form-control" placeholder="Confirm Password">
+
+				
+  					
+
+				<button id="sub" type="submit" class="btn btn-primary">SIGN UP</button>
+			</form>
+
+				<h3 id="nta">Already a member?</h3>
+				
+			<button id="cna" type="submit" class="btn btn-primary"><a href="/products/">SIGN IN</a></button>
+		</div>
+
+
+
+			
+
+	{%endblock%}
+		
+
+ <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>

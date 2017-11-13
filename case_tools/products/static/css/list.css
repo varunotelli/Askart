@@ -1,0 +1,93 @@
+#list {
+position:absolute;
+left:430px;
+top:200px;
+width:530px;
+}
+
+#list table {
+width:530px;
+border:1px solid #aaaaaa;
+}
+
+#list td,th {
+width:25%;
+text-align:center;
+}
+
+#list th {
+background-color:#bf4040;
+color:#ffffff;
+font-size:17pt;
+height:50px;
+}
+
+#list td {
+height:60px;
+font-size:14pt;
+}
+
+#list tr {
+border:1px solid #cccccc;
+}
+
+#list tr:nth-child(even) {
+background-color:#f2f2f2;
+}
+
+#list tr:hover {
+background-color:#ddd;
+}
+
+.buybutton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #808080;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 8px;
+  padding:5px;
+}
+
+.buybutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buybutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buybutton:hover span {
+  padding-right: 25px;
+}
+
+.buybutton:hover {
+background-color:#404040;
+}
+
+.buybutton:hover span:after {
+  opacity: 1;
+  right: 0;
+  background-color:#404040;
+}
+
+.anchor:visited {
+color:white;
+}
+
+span .anchor {
+text-decoration:none;
+}

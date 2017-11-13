@@ -1,0 +1,205 @@
+<!doctype html>
+{%load static%}
+<html>
+<head>
+<style>
+ul {
+position:absolute;
+top:60px !important;
+}
+
+
+#search {
+width: 75%;
+margin-top:13px;
+color:black;
+float:right;
+border-radius:20px;
+}
+/* When the input field gets focus, change its width to 100% */
+
+.container {
+height:60px;
+}
+
+.navbar-header {
+margin-top:7px;
+}
+
+#log {
+font-size:17px;
+position:absolute;
+right:20px;
+top:18px;
+font-family: 'Cinzel', serif;
+}
+
+#un {
+position:absolute;
+top:150px;
+right:25px;
+color:black;
+}
+
+#log {
+position:absolute;
+right:-24px;
+height:auto;
+width:100px;
+display:inline-block;
+}
+
+#con {
+display:none;
+position:absolute;
+top:45px;
+width:150px;
+right:28px;
+color:black;
+background:#CCCCCC;
+padding:5px;
+}
+
+#log:visited #con{
+display:block;
+}
+</style>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all"/>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+
+<link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{%static 'css/loginstyle.css' %}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cinzel:900|Noto+Serif" rel="stylesheet">
+
+<link rel="stylesheet" href="{%static 'css/sno.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{%static 'css/list.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{%static 'css/compare.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{%static 'css/index.css' %}" type="text/css"/>
+
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
+<script type="text/javascript">
+$(function() {
+$("#search").autocomplete({source:'/products/autocomplete/',
+select: function(event,ui){
+window.location.pathname='products/item/'+ui.item.value;
+}
+});
+});
+
+function sort(a) {
+var g=document.getElementsByClassName('sortbutton');
+
+if(g.disabled==true) {alert('Error: Cannot compare');}
+else if(g.disabled==false) {
+var rows=document.getElementById('t0').getElementsByTagName('tr').length;
+rows-=1;
+
+for(var i=0;i<rows-1;i++){
+	for(var j=0;j<rows-i-1;j++){
+		var x=document.getElementById("t0").rows[j+1].cells;
+		var y=document.getElementById("t0").rows[j+2].cells;
+		
+		var c=x[1].innerHTML;
+		var d=y[1].innerHTML;
+		
+		c=c.replace(/\,/g,'');
+		d=d.replace(/\,/g,'');
+		c=c.replace(/\₹ /g,'');
+		d=d.replace(/\₹ /g,'');
+		
+		c=c*1;
+		d=d*1;
+		
+		if(a==1) {
+			if(c>d) {
+				var cars=["0","0","0"];
+				for(var p=0;p<3;p++) {
+					cars[p]=x[p].innerHTML;
+					x[p].innerHTML=y[p].innerHTML;
+					y[p].innerHTML=cars[p];
+				}
+			}
+		}
+		else if(a==2) {
+			if(c<d) {
+				var cars=["0","0","0"];
+				for(var p=0;p<3;p++) {
+					cars[p]=x[p].innerHTML;
+					x[p].innerHTML=y[p].innerHTML;
+					y[p].innerHTML=cars[p];
+				}
+			}		
+		}
+	}
+}
+}
+}
+
+function check1() {
+var x=document.getElementById("t0").rows[1].cells;
+var y=document.getElementById("t0").rows[2].cells;
+		
+var c=x[1].innerHTML;
+var d=y[1].innerHTML;
+
+c=c.replace(/\,/g,'');
+d=d.replace(/\,/g,'');
+c=c.replace(/\₹ /g,'');
+d=d.replace(/\₹ /g,'');
+		
+c=c*1;
+d=d*1;
+
+if(c==0) {
+document.getElementById('fake1').innerHTML="";
+document.getElementById('box1').innerHTML="";
+}
+else if(d==0) {
+document.getElementById('fake2').innerHTML="";
+document.getElementById('box2').innerHTML="";
+}
+
+var g=document.getElementsByClassName('sortbutton');
+
+if(c==0||d==0) {
+g.disabled=true;
+g[0].style.cursor="not-allowed";
+g[1].style.cursor="not-allowed";
+}
+else {
+g.disabled=false;
+}
+
+}
+</script>
+</head>
+
+<body onload="check1()">
+<!--navbar-->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container container-fluid">
+			<div class="navbar-header">
+				<div class="navbar-brand"><a href="http://127.0.0.1:8000/products/">ASKART</a></div>
+			</div>
+
+			<form class="form-group" action="" method="get">
+			{%csrf_token%}
+			<input type="text" id="search" class="form-control" name="search"
+			   placeholder="Search..." spellcheck="false">
+			</form>
+				{%if user.is_authenticated%}<span id="log"><a data-toggle="tooltip" title="Logout" href="/products/logout"style="color:black;"><img src="{%static 'p.png'%}"></a></span>{%endif%}
+		</div>
+	</nav>
+
+{%block body%}
+{%endblock%}
+</body>
+</html>
