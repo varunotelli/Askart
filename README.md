@@ -6,7 +6,7 @@ E-Commerce Price Comparator System is a web application which allows users to do
 
 ## Screenshots
 
-<img src="assets/one.PNG" alt="home page" width="350" height="197">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/two.PNG" alt="home page" width="350" height="197">
+<p align="center"><img src="assets/one.PNG" alt="home page" width="350" height="197">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/two.PNG" alt="home page" width="350" height="197"></p>
 
 <img src="assets/three.PNG" alt="home page" width="350" height="197">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/four-1.PNG" alt="home page" width="350" height="197">
 
