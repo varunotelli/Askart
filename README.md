@@ -1,4 +1,8 @@
-# E-commerce
+# E-Commerce Price Comparator System
+
+## Introduction
+
+E-Commerce Price Comparator System is a web application which allows users to do quick, practical and cost-efficient shopping all at one stop. It paves the way for the user to know the prices of a queried product being sold on  most popular e-commerce websites like amazon, flipkart, snapdeal etc.,
 
 ## Screenshots
 
