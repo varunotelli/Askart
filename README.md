@@ -6,7 +6,7 @@ E-Commerce Price Comparator System is a web application which allows users to do
 
 ## Requirements
 * Python 3.x
-* Django
+* Django 1.9
 
 ## How to run
 * Navigate to case_tools directory using your cmd and type `python manage.py runserver`
