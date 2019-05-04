@@ -4,6 +4,14 @@
 
 E-Commerce Price Comparator System is a web application which allows users to do quick, practical and cost-efficient shopping all at one stop. It paves the way for the user to know the prices of a queried product being sold on  most popular e-commerce websites like amazon, flipkart, snapdeal etc.,
 
+## Requirements
+* Python 3.x
+* Django
+
+## How to run
+* Navigate to case_tools directory using your cmd and type `python manage.py runserver`
+* Open browser and type `localhost:8000/products`
+
 ## Screenshots
 
 <h3 align="center">Home Page</h3>
